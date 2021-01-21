@@ -8,6 +8,7 @@ document.addEventListener("readystatechange", (event) => {
 
 const initApp = () => {
   //set the focus
+  setSearchFocus();
   // 3 listeners clear text
 
   const form = document.getElementById("searchBar");
@@ -20,4 +21,5 @@ const submitTheSearch = (event) => {
   // delete search results
   //process the search
   //set the focus
+  setSearchFocus();
 };
