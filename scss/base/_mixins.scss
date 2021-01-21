@@ -1,0 +1,90 @@
+//media query manager
+/* 
+0-600px phone
+
+600 - 900px  tablet portrait
+900 - 1200px tablet landscape
+
+[1200 -1800] is where our normal style applies
+
+188px > big screens
+
+order : base > typography > general layout + grid > page layout > components
+
+ breakpoint argument choices
+-phone
+-tab-port
+-tab-land
+-big -desktop
+*/
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 37.5em) {
+      // 600px / 16
+      @content;
+    }
+  }
+  @if $breakpoint == tab-port {
+    @media only screen and (max-width: 56.25em) {
+      //900px
+      @content;
+    }
+  }
+  @if $breakpoint == tab-land {
+    @media only screen and (max-width: 75em) {
+      //1200px
+      @content;
+    }
+  }
+  @if $breakpoint == big-desktop {
+    @media only screen and (min-width: 112.5em) {
+      //1800px
+      @content;
+    }
+  }
+}
+
+// margin and padding utililies
+$space-amounts: (1, 2, 3, 4, 5);
+
+@each $space in $space-amounts {
+  .m-#{$space} {
+    margin: #{$space}rem;
+  }
+  .my-#{$space} {
+    margin: #{$space}rem 0;
+  }
+  .mx-#{$space} {
+    margin: 0 #{$space}rem;
+  }
+  .p-#{$space} {
+    padding: #{$space}rem;
+  }
+  .py-#{$space} {
+    padding: #{$space}rem 0;
+  }
+  .px-#{$space} {
+    padding: 0 #{$space}rem;
+  }
+}
+
+@function weight($weight-name) {
+  @return map-get($font-weight, $weight-name);
+}
+
+@mixin flexCenter($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+@mixin theme($light-theme: true) {
+  @if $light-theme {
+    background: lighten(#fff, 100%);
+    color: darken(#000, 100%);
+  }
+}
+.light {
+  @include theme($light-theme: true);
+}

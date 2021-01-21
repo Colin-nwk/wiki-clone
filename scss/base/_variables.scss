@@ -1,0 +1,19 @@
+:root {
+  --black-color: #141414;
+  --white-color: #fffdfd;
+  --gray-1-color: #333;
+  --gray-2-color: #757575;
+  --gray-3-color: #ebe8e8;
+  --info-color: #4834d4;
+  --success-color: #6ab04c;
+  --warning-color: #f0932b;
+  --danger-color: #eb4d4b;
+  --box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+$font-weight: (
+  "light": 300,
+  "regular": 400,
+  "medium": 500,
+  "bold": 700,
+);

@@ -1,0 +1,64 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  // this defines what 1rem is
+  font-size: 62.5%; // 1rem = 10px /16px = 62.5%
+
+  @include respond(tab-port) {
+    font-size: 55%; // 1rem = 10px /16px = 62.5%
+  }
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  color: var(--grey-1-color);
+  background-color: var(--white-color);
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+
+p {
+  font-size: 1.6rem;
+  margin: 1rem 0;
+  line-height: 2;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 300;
+  line-height: 1.2;
+  margin: 1rem 0;
+}
+h1 {
+  font-size: 4rem;
+}
+h2 {
+  font-size: 3rem;
+}
+h3 {
+  font-size: 2rem;
+}
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--grey-1-color);
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
