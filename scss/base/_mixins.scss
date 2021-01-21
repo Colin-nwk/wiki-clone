@@ -25,13 +25,13 @@ order : base > typography > general layout + grid > page layout > components
     }
   }
   @if $breakpoint == tab-port {
-    @media only screen and (max-width: 56.25em) {
+    @media only screen and (min-width: 56.25em) {
       //900px
       @content;
     }
   }
   @if $breakpoint == tab-land {
-    @media only screen and (max-width: 75em) {
+    @media only screen and (min-width: 75em) {
       //1200px
       @content;
     }
@@ -68,23 +68,38 @@ $space-amounts: (1, 2, 3, 4, 5);
   }
 }
 
-@function weight($weight-name) {
-  @return map-get($font-weight, $weight-name);
-}
+// @function weight($weight-name) {
+//   @return map-get($font-weight, $weight-name);
+// }
 
-@mixin flexCenter($direction) {
+// @mixin flexCenter($direction) {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   flex-direction: $direction;
+// }
+
+// @mixin theme($light-theme: true) {
+//   @if $light-theme {
+//     background: lighten(#fff, 100%);
+//     color: darken(#000, 100%);
+//   }
+// }
+// .light {
+//   @include theme($light-theme: true);
+// }
+
+%flex {
   display: flex;
-  justify-content: center;
   align-items: center;
-  flex-direction: $direction;
 }
 
-@mixin theme($light-theme: true) {
-  @if $light-theme {
-    background: lighten(#fff, 100%);
-    color: darken(#000, 100%);
-  }
+@mixin flexDirection($direction) {
+  @extend %flex;
+  flex-direction: $direction;
+  justify-content: flex-start;
 }
-.light {
-  @include theme($light-theme: true);
+@mixin flexCenter {
+  @extend %flex;
+  justify-content: center;
 }

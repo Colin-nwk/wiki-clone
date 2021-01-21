@@ -11,54 +11,45 @@ html {
   font-size: 62.5%; // 1rem = 10px /16px = 62.5%
 
   @include respond(tab-port) {
-    font-size: 55%; // 1rem = 10px /16px = 62.5%
+    font-size: 60%; // 1rem = 10px /16px = 62.5%
+  }
+  @include respond(big-desktop) {
+    font-size: 70%; // 1rem = 10px /16px = 62.5%
   }
 }
 
 body {
-  font-family: "Lato", sans-serif;
-  font-weight: 300;
-  color: var(--grey-1-color);
-  background-color: var(--white-color);
-  font-size: 1.6rem;
-  line-height: 1.6;
+  background-color: var(--white);
+  color: var(--font);
+  width: 100vw;
+  min-height: 100vh;
+  font-family: var(--font-family);
+  font-size: 2.2rem;
 }
 
-p {
-  font-size: 1.6rem;
-  margin: 1rem 0;
-  line-height: 2;
+main {
+  @include flexDirection(column);
+  min-height: calc(100vh - 6rem);
 }
 
-h1,
-h2,
-h3 {
-  font-weight: 300;
-  line-height: 1.2;
-  margin: 1rem 0;
+footer {
+  width: 100%;
+  height: 6rem;
+  @include flexCenter;
+  p {
+    font-size: 1rem;
+    color: var(--stats);
+
+    a {
+      color: var(--stats);
+    }
+  }
 }
-h1 {
-  font-size: 4rem;
-}
-h2 {
-  font-size: 3rem;
-}
-h3 {
-  font-size: 2rem;
-}
-li {
-  list-style: none;
+
+img {
+  display: block;
 }
 
 a {
   text-decoration: none;
-  color: var(--grey-1-color);
-}
-
-ul {
-  list-style: none;
-}
-
-img {
-  width: 100%;
 }

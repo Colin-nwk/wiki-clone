@@ -1,0 +1,61 @@
+.blue {
+  color: var(--blue);
+}
+.orange {
+  color: var(--orange);
+}
+.red {
+  color: var(--red);
+}
+.green {
+  color: var(--green);
+}
+.exclaim {
+  display: inline-block;
+  font-size: 2.5rem;
+  transform: rotate(12deg);
+  @include respond(tab-land) {
+    font-size: 3.5rem;
+  }
+}
+
+.offscreen {
+  position: absolute;
+  left: -100rem;
+}
+
+.none {
+  display: none;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  min-width: 5rem;
+  height: 5rem;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+
+  i {
+    font-size: 2rem;
+    transition: all 0.3s ease-in-out;
+    @include respond(tab-port) {
+      font-size: 2.5rem;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    i {
+      padding-bottom: 0.5rem;
+      border-bottom-width: 1px;
+      border-bottom-style: solid;
+    }
+  }
+}

@@ -1,0 +1,86 @@
+.results {
+  @include flexDirection(column);
+  padding: 0.8rem 1.6rem;
+  width: 90vw;
+  @include respond(tab-port) {
+    width: 75vw;
+  }
+  @include respond(tab-land) {
+    width: 60vw;
+  }
+  .statsBar {
+    width: 100%;
+
+    .stats {
+      color: var(--stats);
+      font-size: 1rem;
+      @include respond(tab-port) {
+        font-size: 1.5rem;
+      }
+    }
+  }
+  .searchResults {
+    width: 100%;
+
+    .resultItem {
+      @include flexDirection(column);
+      width: 100%;
+      padding: 0.4rem 0;
+      @include respond(tab-port) {
+        padding: 0.8rem 0;
+      }
+      .resultTitle {
+        width: 100%;
+        text-align: left;
+        font-size: 1.6rem;
+        line-height: 1.7rem;
+        margin-bottom: 0.4rem;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        padding: 3px 2px;
+        @include respond(tab-port) {
+          font-size: 1.8rem;
+          line-height: 1.9rem;
+          margin-bottom: 0.6rem;
+        }
+
+        a {
+          color: var(--blue);
+          text-decoration: none;
+          cursor: pointer;
+          transition: all 0.3s ease-in-out;
+        }
+        a:visited {
+          color: var(--light-blue);
+        }
+        a:hover {
+          text-decoration: underline;
+        }
+        a:focus {
+          outline: 2px solid var(--black);
+        }
+      }
+      .resultContent {
+        display: flex;
+        width: 100%;
+
+        .resultImage {
+          margin-right: 0.8rem;
+        }
+        .resultText {
+          flex-grow: 1;
+          font-size: 1.4rem;
+          line-height: 2rem;
+          max-height: 6rem;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          @include respond(tab-port) {
+            font-size: 1.8rem;
+            line-height: 2.8rem;
+          }
+        }
+      }
+    }
+  }
+}

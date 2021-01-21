@@ -1,0 +1,77 @@
+.searchEntry {
+  @include flexDirection(column);
+  padding-top: 4rem;
+
+  .logo {
+    letter-spacing: -1px;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    @include respond(tab-port) {
+      font-size: 4rem;
+      letter-spacing: -2px;
+    }
+  }
+  .searchBar {
+    width: 90vw;
+    display: flex;
+    border: 2px solid var(--gray-3);
+    border-radius: 50rem;
+    padding: 0.3rem 0.6rem;
+    transition: all 0.3s ease-in-out;
+    &:focus,
+    &:focus-within {
+      box-shadow: var(--box-shadow);
+    }
+    @include respond(tab-port) {
+      width: 80vw;
+      padding: 1.2rem 1rem;
+    }
+    @include respond(tab-land) {
+      width: 60vw;
+    }
+    input[type="text"] {
+      margin: 0.5rem 0.1rem;
+      flex-grow: 1;
+      font-size: 1.8rem;
+      text-align: left;
+      letter-spacing: 0.1rem;
+      border: 0;
+      outline: none;
+      padding: 1rem 0;
+
+      min-width: 15rem;
+      @include respond(tab-port) {
+        font-size: 2.1rem;
+      }
+    }
+  }
+  .searchBtn:hover,
+  .searchBtn:focus {
+    i {
+      color: var(--green);
+    }
+  }
+  .clear:hover,
+  .clear:focus {
+    color: var(--red);
+
+    i {
+      color: var(--red);
+    }
+  }
+  .searchBtn {
+    @include respond(tab-port) {
+      padding-left: -1rem;
+    }
+  }
+  .clear {
+    justify-content: center;
+    align-items: center;
+    color: var(--stats);
+    border-right: thin solid var(--gray-3);
+    @include respond(tab-port) {
+      padding: 0 2rem;
+    }
+  }
+}

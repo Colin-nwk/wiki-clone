@@ -22,7 +22,11 @@
       <h1 class="offscreen">Search Me A Wikipedia Powered Search Engine</h1>
       <section class="searchEntry">
         <h2 class="offscreen">Search Term Entry</h2>
-        <div class="logo" aria-hidden="true">SearchMe</div>
+        <div class="logo" aria-hidden="true">
+          <span class="orange">Se</span><span class="blue">ar</span
+          ><span class="green">ch</span><span class="red">Me</span
+          ><span class="orange exclaim">!</span>
+        </div>
         <form action="#" id="searchBar" class="searchBar">
           <label for="search" class="offscreen"
             >Enter a search term or phrase</label
@@ -30,7 +34,7 @@
           <input type="text" name="" id="search" autocomplete="off" />
           <span
             id="clear"
-            class="btn none btn"
+            class="btn none btn clear"
             role="button"
             tabindex="0"
             aria-label="Clear search terms "
@@ -41,7 +45,7 @@
             class="btn searchBtn"
             aria-label="Submit button"
           >
-            <i class="fas fa-search"></i>
+            <i class="fas fa-search blue"></i>
           </button>
         </form>
       </section>
@@ -78,5 +82,6 @@
         <span aria-hidden="true">&gt;&gt; </span>
       </p>
     </footer>
+    <script src="js/app.js" type="module"></script>
   </body>
 </html>
