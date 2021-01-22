@@ -7,3 +7,7 @@ BuilT a Google clone using HTML, SASS compiled to CSS, and Vanilla Javascript. T
 gitdagray
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/fa646ba8-c1fa-44cb-ad1f-b5d826711f7a/deploy-status)](https://app.netlify.com/sites/wiki-clone/deploys)
+
+# link
+
+https://wiki-clone.netlify.app/
