@@ -1,8 +1,8 @@
 import {
-  clearPushListener,
-  clearSearchText,
   setSearchFocus,
   showClearTextButton,
+  clearSearchText,
+  clearPushListener,
 } from "./searchBar.js";
 import {
   deleteSearchResults,
@@ -19,39 +19,30 @@ document.addEventListener("readystatechange", (event) => {
 });
 
 const initApp = () => {
-  //  set the focus
   setSearchFocus();
-  // 3 listeners clear text
   const search = document.getElementById("search");
   search.addEventListener("input", showClearTextButton);
-  const clear = document.getElementById("searchBar");
+  const clear = document.getElementById("clear");
   clear.addEventListener("click", clearSearchText);
   clear.addEventListener("keydown", clearPushListener);
   const form = document.getElementById("searchBar");
   form.addEventListener("submit", submitTheSearch);
 };
 
-// procedural 'workflow' function
+// Procedural "workflow" function
 const submitTheSearch = (event) => {
   event.preventDefault();
-  //  delete search results
   deleteSearchResults();
-  //process the search
   processTheSearch();
-  //set the focus
   setSearchFocus();
 };
 
-//Procedural
+// Procedural
 const processTheSearch = async () => {
-  // clear the stats line
   clearStatsLine();
-
   const searchTerm = getSearchTerm();
-  if (searchTerm === "") return;
+  if (searchTerm === "") return; //TODO:
   const resultArray = await retrieveSearchResults(searchTerm);
-  if (resultArray.length) buildSearchResults(resultArray); // build search results
-
-  // set stats line
+  if (resultArray.length) buildSearchResults(resultArray);
   setStatsLine(resultArray.length);
 };
